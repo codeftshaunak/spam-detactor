@@ -13,8 +13,12 @@ const SpamDetectionForm: React.FC = () => {
         event.preventDefault();
         const doc = compromise(message);
         const hasFewWords = doc.terms.length < 5; // Adjust the threshold as needed
-        const containsInvestment = message.toLowerCase().includes('investment'); // Check if message contains "investment"
-        const isSpam = hasFewWords || containsInvestment; // Consider it as spam if it has few words or contains "investment"
+
+        // Check if message contains any of the spam words
+        const spamWords = ['investment', 'spam', 'money', 'hero', 'fuck'];
+        const containsSpamWord = spamWords.some(word => message.toLowerCase().includes(word));
+
+        const isSpam = hasFewWords || containsSpamWord; // Consider it as spam if it has few words or contains any spam word
 
         setIsSpam(isSpam);
     };
