@@ -102,7 +102,7 @@ const SpamDetectionForm: React.FC = () => {
     return (
         <div className='w-full flex flex-col py-10'>
             {isSpam && <p className="text-center mb-5 text-red-400">This message appears to be spam.</p>}
-            <p className="text-center mb-5 text-black"></p>
+            <p className="text-center mb-5 text-white">Spam Word: Investment, Spam, Money, Hero, F*ck </p>
             <div className='flex flex-col w-[500px] m-auto bg-slate-400 p-6 rounded-lg'>
                 <textarea value={message} onChange={handleInputChange} className='text-black p-3 rounded-lg' />
                 <div className="flex">
